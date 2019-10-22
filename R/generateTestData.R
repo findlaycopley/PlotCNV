@@ -8,7 +8,7 @@
 #' @examples
 #' generateTestData()
 #'
-library(magrittr)
+
 generateTestData <- function(){
         set.seed(19011990)
         ## These are my basic chr sizes for hg19

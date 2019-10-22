@@ -27,11 +27,6 @@
 #' CNV <- setPositionsCNV(ReturnClass, genome=genome)
 #' CNV <- plotCopynumber(ReturnClass)
 #'
-if (! require(tidyverse)) {print("requirement tidyverse is not met")
-        install <- readline(prompt="Install the tidyverse package [Y/n]?")
-        ifelse(install == "y" | install == "Y", BiocManager::install("tidyverse"),
-               "package not installing")
-        }
 
 RunCNV <- function(Copynumber, genome="hg19", chr="chr",sampleID="sampleID",start.pos="start.pos",end.pos="end.pos", calls="calls") {
         ReturnClass <- prepareCNV(Copynumber, chr=chr, sampleID=sampleID, start.pos=start.pos, end.pos=end.pos, calls=calls)

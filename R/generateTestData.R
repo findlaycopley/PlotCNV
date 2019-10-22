@@ -15,7 +15,6 @@ generateTestData <- function(genome="hg19", FinalChrom="chrX"){
         set.seed(19011990)
         ## These are my basic chr sizes for hg19
         Chr_Sizes <- getGenomeLengths(genome=genome, FinalChrom=FinalChrom)
-        print(Chr_Sizes)
         ## Make some sample IDs
         sampleID <- c("Sample1","Sample2","Sample3","Sample4")
         ## Loop through the samples and generate some segments

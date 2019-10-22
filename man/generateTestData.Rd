@@ -14,6 +14,7 @@ This script will generate some very basic test data to check thr script is runni
 }
 \examples{
 generateTestData()
+
 }
 \keyword{CNV}
 \keyword{Copynumber}

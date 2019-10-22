@@ -4,9 +4,11 @@
 #'
 #' @title generateTestData
 #' @keywords Copynumber CNV
+#' @importFrom magrittr "%>%"
 #' @export
 #' @examples
 #' generateTestData()
+#'
 
 generateTestData <- function(){
         set.seed(19011990)

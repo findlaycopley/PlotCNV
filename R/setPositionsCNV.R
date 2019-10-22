@@ -24,13 +24,13 @@ setPositionsCNV <- function(ReturnClass, genome="hg19", FinalChrom="chrX") {
         ## Setup x coords by adding the cumulative chromosome length to each start and end position.
         ## If not using the chr prefix add it to look over the chromosomes
         ## TODO make this better
-        ifelse (! grep("chr", ReturnClass@Segments$chr[1]), {
+        ifelse (! grepl("chr", ReturnClass@Segments$chr[1]), {
                 print("not using chr")
                 ReturnClass@Segments$start <- Chr_Starts[paste("chr",ReturnClass@Segments$chr,sep="")] + ReturnClass@Segments$start
                 ReturnClass@Segments$end <- Chr_Starts[paste("chr",ReturnClass@Segments$chr,sep="")] + ReturnClass@Segments$end
-        },{
-                ReturnClass@Segments$start <- Chr_Starts[ReturnClass@Segments$chr] + ReturnClass@Segments$start
-                ReturnClass@Segments$end <- Chr_Starts[ReturnClass@Segments$chr] + ReturnClass@Segments$end
+        },{print("using chr")
+                ReturnClass@Segments$start <- Chr_Starts[ReturnClass@Segments$chr %>% as.character()] + ReturnClass@Segments$start
+                ReturnClass@Segments$end <- Chr_Starts[ReturnClass@Segments$chr %>% as.character()] + ReturnClass@Segments$end
                 })
         ## Set sample heights
         ReturnClass@Segments$Ystart <- ReturnClass@SampleInfo[ReturnClass@Segments$sampleID,]$Ystart

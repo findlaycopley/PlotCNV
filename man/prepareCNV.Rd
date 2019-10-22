@@ -4,15 +4,9 @@
 \alias{prepareCNV}
 \title{prepareCNV}
 \usage{
-prepareCNV(
-  Copynumber,
-  sampleID = "sampleID",
-  genome = "hg19",
-  chr = "chr",
-  start.pos = "start.pos",
-  end.pos = "end.pos",
-  calls = "calls"
-)
+prepareCNV(Copynumber, sampleID = "sampleID", genome = "hg19",
+  chr = "chr", start.pos = "start.pos", end.pos = "end.pos",
+  calls = "calls")
 }
 \arguments{
 \item{Copynumber}{Dataframe of your segments. REQUIRED}

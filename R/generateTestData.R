@@ -4,7 +4,6 @@
 #'
 #' @title generateTestData
 #' @keywords Copynumber CNV
-#' @importFrom magrittr "%>%"
 #' @export
 #' @examples
 #' generateTestData()

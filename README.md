@@ -45,3 +45,4 @@ CNV <- plotCopynumber(CNV)
 ## You can access the plot object in the Plots slot like this:
 CNV@Plot$plot
 ```
+![example of plot](https://github.com/findlaycopley/PlotCNV/blob/master/TestPlot.png)

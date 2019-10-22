@@ -10,9 +10,7 @@ PlotCNV was written on R 3.6.1 and I've no idea if it works on older versions.
 
 ### Dependancies
 
-You'll need to have tidyverse installed which you should have already, come on it's ace. Who doesn't love piping in R?
-
-If you don't have it, it should install when you load the package and it see you have poor taste.
+It'll load/install ggplot2 and magrittr
 
 ### Get the package
 
@@ -29,6 +27,21 @@ This will give you access to the wonderful world of PlotCNV ver 0.1.
 
 ## Examples
 
-Watch this space as I generate some data to include as an example.
+You can generate a series of segments for hg19 like this:
 
-Basically you pass the function RunCNV your segments and information about the columnheadings and it'll print out a genome wide copynumber plot for you.
+```R
+CNV <- generateTestData()
+```
+You can then run the following steps to get the plot
+```R
+## Makes sure all the columns are labelled in a way that the package understands
+CNV <- prepareCNV(CNV, chr="chr", sampleID="sampleID", start.pos="start.pos", end.pos="end.pos", calls="calls")
+## Orders the samples so they will plot in descending order of % variant bp
+CNV <- orderCNV(CNV)
+## Sets up the data values for the plot
+CNV <- setPositionsCNV(CNV, genome="hg19")
+## Prints out the plot
+CNV <- plotCopynumber(CNV)
+## You can access the plot object in the Plots slot like this:
+CNV@Plot$plot
+```

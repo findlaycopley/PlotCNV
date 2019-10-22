@@ -1,14 +1,14 @@
 #' Generate some basic test data
 #'
 #' This script will generate some very basic test data to check thr script is running correctly
-#'
+#' @name generateTestData
 #' @title generateTestData
 #' @keywords Copynumber CNV
 #' @export
 #' @examples
 #' generateTestData()
 #'
-
+library(magrittr)
 generateTestData <- function(){
         set.seed(19011990)
         ## These are my basic chr sizes for hg19

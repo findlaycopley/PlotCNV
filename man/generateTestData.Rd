@@ -3,9 +3,6 @@
 \name{generateTestData}
 \alias{generateTestData}
 \title{generateTestData}
-\usage{
-generateTestData()
-}
 \description{
 Generate some basic test data
 }

@@ -32,6 +32,17 @@ You can generate a series of segments for hg19 like this:
 ```R
 CNV <- generateTestData()
 ```
+
+This will generate a dataframe to use in the package. This can be used as a guide to formatting your own data for use in this package.
+
+chr | sampleID | start.pos | end.pos | calls
+---|---|---|---|---
+chr7 |	Sample1	| 100998668 |	110396599 |	Loss
+chr16 |	Sample2	| 43859840 | 80317946 |	Gain
+chr12	| Sample3 |	32271933 | 99088557 | CN-LOH
+chr16 |	Sample4	| 58412150 | 88854473 | CN-LOH
+
+
 You can then run the following steps to get the plot
 ```R
 ## Makes sure all the columns are labelled in a way that the package understands

@@ -16,11 +16,16 @@
 #' @keywords Copynumber CNV
 #' @export
 #' @examples
-#' CNV <- read.delim("your_segments_file.tsv")
+#' CNV <- generateTestData()
 #' RunCNV(CNV)
 #' ## If you have differnet column names specify them when calling the function
 #' RunCNV(CNV, chr="CHROM","start.pos" = "Start", sampleID="sample")
 #'
+#' ## You can run the functions seperately too:
+#' CNV <- prepareCNV(Copynumber, chr=chr, sampleID=sampleID, start.pos=start.pos, end.pos=end.pos, calls=calls)
+#' CNV <- orderCNV(ReturnClass)
+#' CNV <- setPositionsCNV(ReturnClass, genome=genome)
+#' CNV <- plotCopynumber(ReturnClass)
 #'
 if (! require(tidyverse)) {print("requirement tidyverse is not met")
         install <- readline(prompt="Install the tidyverse package [Y/n]?")
@@ -29,9 +34,9 @@ if (! require(tidyverse)) {print("requirement tidyverse is not met")
         }
 
 RunCNV <- function(Copynumber, genome="hg19", chr="chr",sampleID="sampleID",start.pos="start.pos",end.pos="end.pos", calls="calls") {
-        ReturnClass <- prepareCNV(x, chr=chr, sampleID=sampleID, start.pos=start.pos, end.pos=end.pos, calls=calls)
+        ReturnClass <- prepareCNV(Copynumber, chr=chr, sampleID=sampleID, start.pos=start.pos, end.pos=end.pos, calls=calls)
         ReturnClass <- orderCNV(ReturnClass)
-        ReturnClass <- setPositionsCNV(ReturnClass, genome)
+        ReturnClass <- setPositionsCNV(ReturnClass, genome=genome)
         ReturnClass <- plotCopynumber(ReturnClass)
         ReturnClass
 }

@@ -27,11 +27,16 @@ Then it will generate the positions for each sample on the y-axis
 Then it will plot the output
 }
 \examples{
-CNV <- read.delim("your_segments_file.tsv")
+CNV <- generateTestData()
 RunCNV(CNV)
 ## If you have differnet column names specify them when calling the function
 RunCNV(CNV, chr="CHROM","start.pos" = "Start", sampleID="sample")
 
+## You can run the functions seperately too:
+CNV <- prepareCNV(Copynumber, chr=chr, sampleID=sampleID, start.pos=start.pos, end.pos=end.pos, calls=calls)
+CNV <- orderCNV(ReturnClass)
+CNV <- setPositionsCNV(ReturnClass, genome=genome)
+CNV <- plotCopynumber(ReturnClass)
 
 }
 \keyword{CNV}

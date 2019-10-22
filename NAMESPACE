@@ -2,6 +2,7 @@
 
 export(CNVvault)
 export(RunCNV)
+export(generateTestData)
 export(orderCNV)
 export(plotCopynumber)
 export(prepareCNV)

@@ -19,6 +19,10 @@ As we're on github you'll need "install_github" from devtools.
 ```R
 ## If you don't already have devtools installed
 BiocManager::install("devtools")
+```
+To install the package just use this:
+
+```R
 library(devtools)
 install_github("findlaycopley/PlotCNV")
 ```
@@ -50,8 +54,8 @@ chr16 |	Sample2	| 43859840 | 80317946 |	Gain
 chr12	| Sample3 |	32271933 | 99088557 | CN-LOH
 chr16 |	Sample4	| 58412150 | 88854473 | CN-LOH
 
+You can then run the following steps to get the plot:
 
-You can then run the following steps to get the plot
 ```R
 ## Makes sure all the columns are labelled in a way that the package understands
 CNV <- prepareCNV(CNV, chr="chr", sampleID="sampleID", start.pos="start.pos", end.pos="end.pos", calls="calls")

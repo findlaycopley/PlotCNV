@@ -10,6 +10,8 @@
 
 \item{chr}{string: name of the column for the chromosome. Default: "chr"}
 
+\item{sampleID}{string: name of the column for the sample IDs. Default: "sampleID"}
+
 \item{start.pos}{string: name of the column for the start positions of the segments. Default: "start.pos"}
 
 \item{end.pos}{string: name of the column for the end positions of the segments. Default: "end.pos"}
@@ -28,7 +30,7 @@ Then it will plot the output
 CNV <- read.delim("your_segments_file.tsv")
 RunCNV(CNV)
 ## If you have differnet column names specify them when calling the function
-RunCNV(CNV, chr="CHROM","start.pos" = "Start")
+RunCNV(CNV, chr="CHROM","start.pos" = "Start", sampleID="sample")
 
 
 }

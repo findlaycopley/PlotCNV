@@ -9,6 +9,7 @@
 #' @param Copynumber Dataframe of your segments. REQUIRED
 #' @param genome The genome to use for plotting. Currently only works on hg19. Default: "hg19"
 #' @param chr string: name of the column for the chromosome. Default: "chr"
+#' @param sampleID string: name of the column for the sample IDs. Default: "sampleID"
 #' @param start.pos string: name of the column for the start positions of the segments. Default: "start.pos"
 #' @param end.pos string: name of the column for the end positions of the segments. Default: "end.pos"
 #' @param calls string: name of the column for the SV type of the segments. Default: "calls"
@@ -18,7 +19,7 @@
 #' CNV <- read.delim("your_segments_file.tsv")
 #' RunCNV(CNV)
 #' ## If you have differnet column names specify them when calling the function
-#' RunCNV(CNV, chr="CHROM","start.pos" = "Start")
+#' RunCNV(CNV, chr="CHROM","start.pos" = "Start", sampleID="sample")
 #'
 #'
 if (! require(tidyverse)) {print("requirement tidyverse is not met")
@@ -27,8 +28,8 @@ if (! require(tidyverse)) {print("requirement tidyverse is not met")
                "package not installing")
         }
 
-RunCNV <- function(Copynumber, genome="hg19", chr="chr",start.pos="start.pos",end.pos="end.pos", calls="calls") {
-        ReturnClass <- prepareCNV(x, chr=chr, start.pos=start.pos, end.pos=end.pos, calls=calls)
+RunCNV <- function(Copynumber, genome="hg19", chr="chr",sampleID="sampleID",start.pos="start.pos",end.pos="end.pos", calls="calls") {
+        ReturnClass <- prepareCNV(x, chr=chr, sampleID=sampleID, start.pos=start.pos, end.pos=end.pos, calls=calls)
         ReturnClass <- orderCNV(ReturnClass)
         ReturnClass <- setPositionsCNV(ReturnClass, genome)
         ReturnClass <- plotCopynumber(ReturnClass)

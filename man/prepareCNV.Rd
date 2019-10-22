@@ -6,6 +6,7 @@
 \usage{
 prepareCNV(
   Copynumber,
+  sampleID = "sampleID",
   genome = "hg19",
   chr = "chr",
   start.pos = "start.pos",
@@ -15,6 +16,8 @@ prepareCNV(
 }
 \arguments{
 \item{Copynumber}{Dataframe of your segments. REQUIRED}
+
+\item{sampleID}{string: name of the column for the sample IDs. Default: "sampleID"}
 
 \item{genome}{The genome to use for plotting. Currently only works on hg19. Default: "hg19"}
 

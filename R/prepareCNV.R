@@ -6,6 +6,7 @@
 #' @param Copynumber Dataframe of your segments. REQUIRED
 #' @param genome The genome to use for plotting. Currently only works on hg19. Default: "hg19"
 #' @param chr string: name of the column for the chromosome. Default: "chr"
+#' @param sampleID string: name of the column for the sample IDs. Default: "sampleID"
 #' @param start.pos string: name of the column for the start positions of the segments. Default: "start.pos"
 #' @param end.pos string: name of the column for the end positions of the segments. Default: "end.pos"
 #' @param calls string: name of the column for the SV type of the segments. Default: "calls"
@@ -15,7 +16,7 @@
 #' prepareCNV()
 #'
 #'
-prepareCNV <- function(Copynumber, genome="hg19", chr="chr",start.pos="start.pos",end.pos="end.pos", calls="calls") {
+prepareCNV <- function(Copynumber, sampleID="sampleID", genome="hg19", chr="chr",start.pos="start.pos",end.pos="end.pos", calls="calls") {
         Copynumber <- Copynumber[! duplicated(Copynumber),]
         ## Create the instance with all the data from Copynumber
         ReturnClass <- CNVvault(Segments = Copynumber)
@@ -23,6 +24,8 @@ prepareCNV <- function(Copynumber, genome="hg19", chr="chr",start.pos="start.pos
         ReturnClass@Segments["chr"] <- Copynumber[chr]
         ## Make sure the call type info is stored in a column called calls
         ReturnClass@Segments["calls"] <- Copynumber[calls]
+        ## Make sure the call type info is stored in a column called calls
+        ReturnClass@Segments["sampleID"] <- Copynumber[sampleID]
         ## Make sure the start position info is stored in a column called start.pos
         ReturnClass@Segments["start.pos"] <- Copynumber[start.pos]
         ## Make sure the start position info is numeric

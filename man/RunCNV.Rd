@@ -11,7 +11,8 @@ RunCNV(
   sampleID = "sampleID",
   start.pos = "start.pos",
   end.pos = "end.pos",
-  calls = "calls"
+  calls = "calls",
+  FinalChrom = "chrX"
 )
 }
 \arguments{

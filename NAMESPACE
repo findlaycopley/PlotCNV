@@ -3,6 +3,7 @@
 export(CNVvault)
 export(RunCNV)
 export(generateTestData)
+export(getGenomeLengths)
 export(orderCNV)
 export(plotCopynumber)
 export(prepareCNV)

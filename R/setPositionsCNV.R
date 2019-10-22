@@ -4,19 +4,17 @@
 #' It will output a full plot of all the segments
 #' @title setPositionsCNV
 #' @param Copynumber Dataframe of your segments. REQUIRED
-#' @param genome The genome to use for plotting. Currently only works on hg19. Default: "hg19"
+#' @param genome string. The geneome to download from UCSC. Default: hg19
+#' @param FinalChrom string. The final chromosome to include in the plot. Default: chrX
 #' @keywords Copynumber CNV
 #' @export
 #' @examples
 #' setPositionsCNV(CNVvault_class)
 
-setPositionsCNV <- function(ReturnClass, genome="hg19") {
-        ## These are for hg19
-        ## Add hg38 as well as a way to automate downloading
-        Chr_Sizes <- c(chr1=249250621,chr2=243199373,chr3=198022430,chr4=191154276,chr5=180915260,chr6=171115067,
-                       chr7=159138663,chr8=146364022,chr9=141213431,chr10=135534747,chr11=135006516,chr12=133851895,
-                       chr13=115169878,chr14=107349540,chr15=102531392,chr16=90354753,chr17=81195210,chr18=78077248,
-                       chr19=59128983,chr20=63025520,chr21=48129895,chr22=51304566,chrX=155270560)
+setPositionsCNV <- function(ReturnClass, genome="hg19", FinalChrom="chrX") {
+        ## This function will download the chromosome sizes from UCSC
+        Chr_Sizes <- getGenomeLengths(genome=genome, FinalChrom=FinalChrom)
+        ## This works out the chromosome starts to correctly position them on the x axis.
         Chr_Starts <- lapply(1:length(Chr_Sizes), function(x) {
                 sum(Chr_Sizes[1:x])
         }) %>% unlist() %>% c(0,.) %>% setNames(c(names(Chr_Sizes),"end"))

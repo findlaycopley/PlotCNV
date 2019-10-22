@@ -19,7 +19,7 @@ prepareCNV(
 
 \item{sampleID}{string: name of the column for the sample IDs. Default: "sampleID"}
 
-\item{genome}{The genome to use for plotting. Currently only works on hg19. Default: "hg19"}
+\item{genome}{string. The geneome to download from UCSC. Default: hg19}
 
 \item{chr}{string: name of the column for the chromosome. Default: "chr"}
 
@@ -28,6 +28,8 @@ prepareCNV(
 \item{end.pos}{string: name of the column for the end positions of the segments. Default: "end.pos"}
 
 \item{calls}{string: name of the column for the SV type of the segments. Default: "calls"}
+
+\item{FinalChrom}{string. The final chromosome to include in the plot. Default: chrX}
 }
 \description{
 Process data for copynumber plot

@@ -4,7 +4,8 @@
 #' It will create an instance of the CNVvault class
 #' @title prepareCNV
 #' @param Copynumber Dataframe of your segments. REQUIRED
-#' @param genome The genome to use for plotting. Currently only works on hg19. Default: "hg19"
+#' @param genome string. The geneome to download from UCSC. Default: hg19
+#' @param FinalChrom string. The final chromosome to include in the plot. Default: chrX
 #' @param chr string: name of the column for the chromosome. Default: "chr"
 #' @param sampleID string: name of the column for the sample IDs. Default: "sampleID"
 #' @param start.pos string: name of the column for the start positions of the segments. Default: "start.pos"

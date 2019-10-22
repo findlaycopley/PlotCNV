@@ -3,6 +3,14 @@
 \name{generateTestData}
 \alias{generateTestData}
 \title{generateTestData}
+\usage{
+generateTestData(genome = "hg19", FinalChrom = "chrX")
+}
+\arguments{
+\item{genome}{string. The geneome to download from UCSC. Default: hg19}
+
+\item{FinalChrom}{string. The final chromosome to include in the plot. Default: chrX}
+}
 \description{
 Generate some basic test data
 }

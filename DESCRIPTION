@@ -12,4 +12,4 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.99.9001
 Depends: 
-    tidyverse (>= 1.2.1)
+    magrittr

@@ -39,7 +39,7 @@ It needs the following 5 columns:
 
 * (string/numeric value) Chromosome the segment is on. Doesn't need the chr prefix for all you cool ensembl cats (if it doesn't detect chr it'll add it with gsub). These do need to match the chromosomes as downloaded from UCSC i.e. chrOne won't work (and is horrific, please don't do this).
 
-**sampleID **
+**sampleID**
 
 * (string) the sample the segment corresponds to.
 

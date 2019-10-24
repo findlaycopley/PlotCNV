@@ -2,7 +2,7 @@
 An R package to create a pretty Copy Number Variant plot from a segments file
 
 ### Disclaimer 
-This is early development so let me know if anyone finds this, likes it, or wants changes let me know!
+This is early development so let me know if anyone finds this, likes it, or wants changes!
 
 ## Installation
 

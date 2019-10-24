@@ -36,15 +36,15 @@ The package takes a dataframe of segments in long format.
 It needs the following 5 columns:
 
 chr
-*(string/numeric value) Chromosome the segment is on. Doesn't need the chr prefix for all you cool ensembl cats (if it doesn't detect chr it'll add it with gsub). These do need to match the chromosomes as downloaded from UCSC i.e. chrOne won't work (and is horrific, please don't do this)  
+* (string/numeric value) Chromosome the segment is on. Doesn't need the chr prefix for all you cool ensembl cats (if it doesn't detect chr it'll add it with gsub). These do need to match the chromosomes as downloaded from UCSC i.e. chrOne won't work (and is horrific, please don't do this)  
 sampleID
-*(string) the sample the segment corresponds to
+* (string) the sample the segment corresponds to
 start.pos
-*(numeric value) the first position of the structural variant
+* (numeric value) the first position of the structural variant
 end.pos
-*(numeric value) the last position of the structural variant
+* (numeric value) the last position of the structural variant
 calls
-*Gain, Loss, CN-LOH (This feature will be overhauled in a future version to accept anything, but is fixed currently to maintain the colours)
+* Gain, Loss, CN-LOH (This feature will be overhauled in a future version to accept anything, but is fixed currently to maintain the colours)
 
 You can name the columns whatever you want, but if they're different to the above you need to pass this with the call to the following functions:
 

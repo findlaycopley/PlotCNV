@@ -6,7 +6,7 @@ This is early development so let me know if anyone finds this, likes it, or want
 
 ## Installation
 
-PlotCNV was written on R 3.6.1 and I've no idea if it works on older versions.
+PlotCNV was written on R 3.6.1 and I've no idea if it works on older versions, but I've no reason to assume it won't.
 
 ### Dependancies
 
@@ -28,6 +28,38 @@ install_github("findlaycopley/PlotCNV")
 ```
 
 This will give you access to the wonderful world of PlotCNV ver 0.1.0
+
+## Input
+
+The package takes a dataframe of segments in long format.
+
+It needs the following 5 columns:
+
+chr
+*(string/numeric value) Chromosome the segment is on. Doesn't need the chr prefix for all you cool ensembl cats (if it doesn't detect chr it'll add it with gsub). These do need to match the chromosomes as downloaded from UCSC i.e. chrOne won't work (and is horrific, please don't do this)  
+sampleID
+*(string) the sample the segment corresponds to
+start.pos
+*(numeric value) the first position of the structural variant
+end.pos
+*(numeric value) the last position of the structural variant
+calls
+*Gain, Loss, CN-LOH (This feature will be overhauled in a future version to accept anything, but is fixed currently to maintain the colours)
+
+You can name the columns whatever you want, but if they're different to the above you need to pass this with the call to the following functions:
+
+```R
+prepareCNV(CNV, chr="chr", sampleID="sampleID", start.pos="start.pos", end.pos="end.pos", calls="calls")
+RunCNV(CNV, chr="chr", sampleID="sampleID", start.pos="start.pos", end.pos="end.pos", calls="calls")
+```
+
+Currently the package will only use genomes on UCSC and will download the chromosome sizes. It will also automatically stop at chrX, but this can be extended (or reduced!) using the "FinalChrom" option. You can set the genome/version to use as follows:
+
+```R
+setPositionsCNV(CNV, genome="hg19", FinalChrom="X")
+RunCNV(CNV, genome="hg19", FinalChrom="X")
+```
+I plan to add the option to set your own chromosome sizes in a future version for all you comrades who might want to use your own genome assemblies or have more control over the plot.
 
 ## Examples
 
@@ -62,7 +94,7 @@ CNV <- prepareCNV(CNV, chr="chr", sampleID="sampleID", start.pos="start.pos", en
 ## Orders the samples so they will plot in descending order of % variant bp
 CNV <- orderCNV(CNV)
 ## Sets up the data values for the plot
-CNV <- setPositionsCNV(CNV, genome="hg19")
+CNV <- setPositionsCNV(CNV, genome="hg19", FinalChrom="X")
 ## Prints out the plot
 CNV <- plotCopynumber(CNV)
 ## You can access the plot object in the Plots slot like this:

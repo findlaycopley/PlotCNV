@@ -4,9 +4,16 @@
 \alias{RunCNV}
 \title{RunCNV}
 \usage{
-RunCNV(Copynumber, genome = "hg19", chr = "chr",
-  sampleID = "sampleID", start.pos = "start.pos",
-  end.pos = "end.pos", calls = "calls", FinalChrom = "chrX")
+RunCNV(
+  Copynumber,
+  genome = "hg19",
+  chr = "chr",
+  sampleID = "sampleID",
+  start.pos = "start.pos",
+  end.pos = "end.pos",
+  calls = "calls",
+  FinalChrom = "chrX"
+)
 }
 \arguments{
 \item{Copynumber}{Dataframe of your segments. REQUIRED}

@@ -53,7 +53,7 @@ It needs the following 5 columns:
 
 **calls**
 
-* Gain, Loss, CN-LOH (This feature will be overhauled in a future version to accept anything, but is fixed currently to maintain the colours).
+* The effect of your copy number call (e.g. Gain/Loss)
 
 You can name the columns whatever you want, but if they're different to the above you need to pass this with the call to the following functions:
 
@@ -118,6 +118,17 @@ You can run the whole thing with just one line too:
 
 ```R
 CNV <- RunCNV(CNV)
+```
+
+### Setting the colours for the calls column
+
+You can set the colour for each segment using the setColour argument in either the  plotCopynumber or RunCNV calls.
+
+You set the colours using a named vector, where the names are the values in the *calls* column and the values are the colours that should be used.
+
+```R
+CNV <- plotCopynumber(CNV, setColours = c("Gain"="#F8766D", "Loss"="#619CFF","CN-LOH"="#00BA38"))
+CNV <- RunCNV(CNV, setColours = c("Gain"="#F8766D", "Loss"="#619CFF","CN-LOH"="#00BA38"))
 ```
 
 ### Other Genomes?

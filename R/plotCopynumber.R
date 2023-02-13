@@ -9,7 +9,7 @@
 #' @examples
 #' Plot_Copynumber(CNVvault_Object)
 
-plotCopynumber <- function(ReturnClass, genome="hg19", setColours = c("Gain"="#F8766D", "Loss"="#619CFF","CN-LOH"="#00BA38")) {
+plotCopynumber <- function(ReturnClass, genome="hg19", setColours = c()) {
 
         ReturnClass@Plot$plot <- ggplot(ReturnClass@Segments, aes(xmin=start, xmax=end, ymin=Ystart, ymax=Yend, fill=calls)) +
                 geom_rect() +

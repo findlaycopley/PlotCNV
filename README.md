@@ -124,6 +124,13 @@ CNV <- RunCNV(CNV)
 
 You can set the colour for each segment using the setColour argument in either the  plotCopynumber or RunCNV calls.
 
+You set the colours using a named vector, where the names are the values in the *calls* column and the values are the colours that should be used.
+
+```R
+CNV <- plotCopynumber(CNV, setColours = c("Gain"="#F8766D", "Loss"="#619CFF","CN-LOH"="#00BA38"))
+CNV <- RunCNV(CNV, setColours = c("Gain"="#F8766D", "Loss"="#619CFF","CN-LOH"="#00BA38"))
+```
+
 ### Other Genomes?
 
 Using other genomes is now easy thanks to GenomicFeatures.

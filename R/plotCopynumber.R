@@ -9,7 +9,7 @@
 #' @examples
 #' Plot_Copynumber(CNVvault_Object)
 
-plotCopynumber <- function(ReturnClass, genome="hg19") {
+plotCopynumber <- function(ReturnClass, genome="hg19", setColours = c("Gain"="#F8766D", "Loss"="#619CFF","CN-LOH"="#00BA38")) {
 
         ReturnClass@Plot$plot <- ggplot(ReturnClass@Segments, aes(xmin=start, xmax=end, ymin=Ystart, ymax=Yend, fill=calls)) +
                 geom_rect() +
@@ -32,8 +32,9 @@ plotCopynumber <- function(ReturnClass, genome="hg19") {
                 scale_y_continuous(expand=c(0,0),
                                    breaks = 0.5:(ReturnClass@NumberOfSamples-0.5), labels=levels(ReturnClass@Segments$sampleID)) +
                 ## set the colours for the calls and remove the name
+                {if(length(setColours)>0)
                 scale_fill_manual(name="",
-                                  values=c("Gain"="#F8766D", "Loss"="#619CFF","CN-LOH"="#00BA38")) +
+                                  values=setColours) } +
                 ## Set axis labels
                 labs(x="Chromosome", y="Sample") +
                 theme_classic() +

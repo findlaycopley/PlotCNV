@@ -1,0 +1,512 @@
+})
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+cbind(start.pos,end.pos)
+}) %>% t() %>% cbind(chr,.) %>% 'colnames<-'(c("chr","start.pos","end.pos"))
+lapply(sampleID, function(x){
+chr <- names(Chr_Sizes[sample(1:23, 10)])
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+cbind(start.pos,end.pos)
+}) %>% t() %>% cbind(chr,.) %>% 'colnames<-'(c("chr","start.pos","end.pos"))
+})
+lapply(sampleID, function(x){
+chr <- names(Chr_Sizes[sample(1:23, 10)])
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos)
+}) %>% t() %>% cbind(chr,.) %>% 'colnames<-'(c("chr","start.pos","end.pos"))
+})
+lapply(sampleID, function(x){
+chr <- names(Chr_Sizes[sample(1:23, 10)])
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>% t() %>% cbind(chr,.) %>% 'colnames<-'(c("chr","start.pos","end.pos"))
+})
+lapply(sampleID, function(x){
+chr <- names(Chr_Sizes[sample(1:23, 10)])
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>% t() %>% cbind(chr,.) %>% 'colnames<-'(c("chr","start.pos","end.pos","calls"))
+})
+lapply(sampleID, function(x){
+chr <- names(Chr_Sizes[sample(1:23, 10)])
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>% t() %>% cbind(chr,rep(x,10),.) %>% 'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+})
+GeneratedDats <- lapply(sampleID, function(x){
+chr <- names(Chr_Sizes[sample(1:23, 10)])
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>% t() %>% cbind(chr,rep(x,10),.) %>% 'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+})
+GeneratedData <- lapply(sampleID, function(x){
+chr <- names(Chr_Sizes[sample(1:23, 10)])
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>% t() %>% cbind(chr,rep(x,10),.) %>% 'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+})
+source('~/OneDrive/Software/MyGits/PlotCNV/R/RunCNV.R')
+Run
+RunCNV()
+library(PlotCNV)
+RunCNV(GeneratedData)
+source('~/OneDrive/Software/MyGits/PlotCNV/R/RunCNV.R')
+RunCNV(GeneratedData)
+GeneratedData
+GeneratedData <- lapply(sampleID, function(x){
+chr <- names(Chr_Sizes[sample(1:23, 10)])
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>% t() %>% cbind(chr,rep(x,10),.) %>% 'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+}) %>% unlist
+GeneratedData
+GeneratedData <- lapply(sampleID, function(x){
+chr <- names(Chr_Sizes[sample(1:23, 10)])
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>% t() %>% cbind(chr,rep(x,10),.) %>% 'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+}) %>% cbind()
+GeneratedData <- lapply(sampleID, function(x){
+chr <- names(Chr_Sizes[sample(1:23, 10)])
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>% t() %>% cbind(chr,rep(x,10),.) %>% 'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+}) %>% rbind()
+GeneratedData
+GeneratedData <- lapply(sampleID, function(x){
+chr <- names(Chr_Sizes[sample(1:23, 10)])
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>% t() %>% cbind(chr,rep(x,10),.) %>% 'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+}) %>% do.call("rbind",.)
+GeneratedData
+RunCNV(GeneratedData)
+GeneratedData <- lapply(sampleID, function(x){
+chr <- names(Chr_Sizes[sample(1:23, 10)])
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>% t() %>% cbind(chr,rep(x,10),.) %>% 'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+}) %>% do.call("rbind",.) %>% as.data.frame()
+GeneratedData
+RunCNV(GeneratedData)
+GeneratedData <- lapply(sampleID, function(x){
+chr <- names(Chr_Sizes[sample(1:23, 10)])
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>% t() %>% cbind(chr,rep(x,10),.) %>% 'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+}) %>% do.call("rbind",.) %>% as.data.frame()
+GeneratedData
+GeneratedData$start.pos %>% as.character()
+GeneratedData$start.pos %>% as.character() %>% as.numeric()
+ReturnClass <- prepareCNV(GeneratedData)
+ReturnClass <- orderCNV(ReturnClass)
+ReturnClass <- setPositionsCNV(ReturnClass, genome)
+ReturnClass
+ReturnClass <- prepareCNV(GeneratedData)
+ReturnClass
+ReturnClass <- orderCNV(ReturnClass)
+ReturnClass
+ReturnClass <- prepareCNV(GeneratedData)
+ReturnClass <- orderCNV(ReturnClass)
+ReturnClass <- setPositionsCNV(ReturnClass, genome)
+ReturnClass
+source('~/OneDrive/Software/MyGits/PlotCNV/R/setPositionsCNV.R')
+ReturnClass <- setPositionsCNV(ReturnClass, genome)
+ReturnClass
+ReturnClass <- prepareCNV(Copynumber, chr=chr, sampleID=sampleID, start.pos=start.pos, end.pos=end.pos, calls=calls)
+ReturnClass <- orderCNV(ReturnClass)
+ReturnClass <- setPositionsCNV(ReturnClass, genome)
+ReturnClass <- plotCopynumber(ReturnClass)
+ReturnClass
+source('~/OneDrive/Software/MyGits/PlotCNV/R/setPositionsCNV.R')
+ReturnClass <- setPositionsCNV(ReturnClass, genome)
+source('~/OneDrive/Software/MyGits/PlotCNV/R/setPositionsCNV.R')
+ReturnClass <- setPositionsCNV(ReturnClass, genome)
+ReturnClass <- prepareCNV(Copynumber, chr=chr, sampleID=sampleID, start.pos=start.pos, end.pos=end.pos, calls=calls)
+ReturnClass <- orderCNV(ReturnClass)
+ReturnClass <- setPositionsCNV(ReturnClass, genome)
+ReturnClass <- plotCopynumber(ReturnClass)
+ReturnClass
+ReturnClass <- prepareCNV(GeneratedData)
+ReturnClass <- orderCNV(ReturnClass)
+ReturnClass <- setPositionsCNV(ReturnClass, genome)
+ReturnClass <- plotCopynumber(ReturnClass)
+ReturnClass
+ReturnClass <- prepareCNV(GeneratedData)
+ReturnClass <- orderCNV(ReturnClass)
+ReturnClass <- setPositionsCNV(ReturnClass, genome)
+ReturnClass <- plotCopynumber(ReturnClass)
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>% t() %>% cbind(chr,rep(x,10),.) %>% 'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+generateTestData <- function(){
+generateTestData <- function(){
+setseed(19011990)
+## These are my basic chr sizes for hg19
+Chr_Sizes <- c(chr1=249250621,chr2=243199373,chr3=198022430,chr4=191154276,chr5=180915260,chr6=171115067,
+chr7=159138663,chr8=146364022,chr9=141213431,chr10=135534747,chr11=135006516,chr12=133851895,
+chr13=115169878,chr14=107349540,chr15=102531392,chr16=90354753,chr17=81195210,chr18=78077248,
+chr19=59128983,chr20=63025520,chr21=48129895,chr22=51304566,chrX=155270560)
+## Make some sample IDs
+sampleID <- c("Sample1","Sample2","Sample3","Sample4")
+## Loop through the samples and generate some segments
+GeneratedData <- lapply(sampleID, function(x){
+## Only grab 10 chromosomes, no duplicates because this is simpler for generation
+## The package can deal with this though
+chr <- names(Chr_Sizes[sample(1:23, 10)], replace=TRUE)
+## For each chromosome selected generate:
+## start position,
+## end position,
+## call type
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>%
+t() %>%
+cbind(chr,rep(x,10),.) %>%
+'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+}) %>% do.call("rbind",.) %>% as.data.frame()
+generateTestData <- function(){
+setseed(19011990)
+## These are my basic chr sizes for hg19
+Chr_Sizes <- c(chr1=249250621,chr2=243199373,chr3=198022430,chr4=191154276,chr5=180915260,chr6=171115067,
+chr7=159138663,chr8=146364022,chr9=141213431,chr10=135534747,chr11=135006516,chr12=133851895,
+chr13=115169878,chr14=107349540,chr15=102531392,chr16=90354753,chr17=81195210,chr18=78077248,
+chr19=59128983,chr20=63025520,chr21=48129895,chr22=51304566,chrX=155270560)
+## Make some sample IDs
+sampleID <- c("Sample1","Sample2","Sample3","Sample4")
+## Loop through the samples and generate some segments
+GeneratedData <- lapply(sampleID, function(x){
+## Only grab 10 chromosomes, no duplicates because this is simpler for generation
+## The package can deal with this though
+chr <- names(Chr_Sizes[sample(1:23, 10)], replace=TRUE)
+## For each chromosome selected generate:
+## start position,
+## end position,
+## call type
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>%
+t() %>%
+cbind(chr,rep(x,10),.) %>%
+'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+}) %>% do.call("rbind",.) %>% as.data.frame()
+)))
+generateTestData <- function(){
+setseed(19011990)
+## These are my basic chr sizes for hg19
+Chr_Sizes <- c(chr1=249250621,chr2=243199373,chr3=198022430,chr4=191154276,chr5=180915260,chr6=171115067,
+chr7=159138663,chr8=146364022,chr9=141213431,chr10=135534747,chr11=135006516,chr12=133851895,
+chr13=115169878,chr14=107349540,chr15=102531392,chr16=90354753,chr17=81195210,chr18=78077248,
+chr19=59128983,chr20=63025520,chr21=48129895,chr22=51304566,chrX=155270560)
+## Make some sample IDs
+sampleID <- c("Sample1","Sample2","Sample3","Sample4")
+## Loop through the samples and generate some segments
+GeneratedData <- lapply(sampleID, function(x){
+## Only grab 10 chromosomes, no duplicates because this is simpler for generation
+## The package can deal with this though
+chr <- names(Chr_Sizes[sample(1:23, 10)], replace=TRUE)
+## For each chromosome selected generate:
+## start position,
+## end position,
+## call type
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>%
+t() %>%
+cbind(chr,rep(x,10),.) %>%
+'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+}) %>% do.call("rbind",.) %>% as.data.frame()
+## Loop through the samples and generate some segments
+GeneratedData <- lapply(sampleID, function(x){
+## Only grab 10 chromosomes, no duplicates because this is simpler for generation
+## The package can deal with this though
+chr <- names(Chr_Sizes[sample(1:23, 10)], replace=TRUE)
+## For each chromosome selected generate:
+## start position,
+## end position,
+## call type
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>%
+t() %>%
+cbind(chr,rep(x,10),.) %>%
+'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+}) %>% do.call("rbind",.) %>% as.data.frame() }
+x<-generateTestData()
+generateTestData <- function(){
+set.seed(19011990)
+## These are my basic chr sizes for hg19
+Chr_Sizes <- c(chr1=249250621,chr2=243199373,chr3=198022430,chr4=191154276,chr5=180915260,chr6=171115067,
+chr7=159138663,chr8=146364022,chr9=141213431,chr10=135534747,chr11=135006516,chr12=133851895,
+chr13=115169878,chr14=107349540,chr15=102531392,chr16=90354753,chr17=81195210,chr18=78077248,
+chr19=59128983,chr20=63025520,chr21=48129895,chr22=51304566,chrX=155270560)
+## Make some sample IDs
+sampleID <- c("Sample1","Sample2","Sample3","Sample4")
+## Loop through the samples and generate some segments
+GeneratedData <- lapply(sampleID, function(x){
+## Only grab 10 chromosomes, no duplicates because this is simpler for generation
+## The package can deal with this though
+chr <- names(Chr_Sizes[sample(1:23, 10)], replace=TRUE)
+## For each chromosome selected generate:
+## start position,
+## end position,
+## call type
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>%
+t() %>%
+cbind(chr,rep(x,10),.) %>%
+'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+}) %>% do.call("rbind",.) %>% as.data.frame() }
+x<-generateTestData()
+generateTestData <- function(){
+set.seed(19011990)
+## These are my basic chr sizes for hg19
+Chr_Sizes <- c(chr1=249250621,chr2=243199373,chr3=198022430,chr4=191154276,chr5=180915260,chr6=171115067,
+chr7=159138663,chr8=146364022,chr9=141213431,chr10=135534747,chr11=135006516,chr12=133851895,
+chr13=115169878,chr14=107349540,chr15=102531392,chr16=90354753,chr17=81195210,chr18=78077248,
+chr19=59128983,chr20=63025520,chr21=48129895,chr22=51304566,chrX=155270560)
+## Make some sample IDs
+sampleID <- c("Sample1","Sample2","Sample3","Sample4")
+## Loop through the samples and generate some segments
+GeneratedData <- lapply(sampleID, function(x){
+## Only grab 10 chromosomes, no duplicates because this is simpler for generation
+## The package can deal with this though
+chr <- names(Chr_Sizes[sample(1:23, 10, replace=TRUE)])
+## For each chromosome selected generate:
+## start position,
+## end position,
+## call type
+sapply(chr, function(y) {
+start.pos <- sample(1:Chr_Sizes[y], 1)
+end.pos <- sample(start.pos:Chr_Sizes[y],1)
+calls <- sample(c("Gain","Loss","CN-LOH"),1)
+cbind(start.pos,end.pos, calls)
+}) %>%
+t() %>%
+cbind(chr,rep(x,10),.) %>%
+'colnames<-'(c("chr","sampleID","start.pos","end.pos","calls"))
+}) %>% do.call("rbind",.) %>% as.data.frame() }
+x<-generateTestData()
+RunCNV(x)
+library(devtools)
+library(roxygen2)
+document()
+source('~/OneDrive/Software/MyGits/PlotCNV/R/RunCNV.R')
+document()
+library(c(devtools, roxygen2))
+library(devtools)
+library(roxygen2)
+document()
+document()
+document()
+document()
+document()
+document()
+document()
+document()
+document()
+document()
+use_pipe()
+document()
+load_all()
+RunCNV()
+c <-generateTestData()
+c
+RunCNV(c)
+c <-generateTestData()
+RunCNV(c)
+document()
+document()
+source('~/OneDrive/Software/MyGits/PlotCNV/R/RunCNV.R')
+source('~/OneDrive/Software/MyGits/PlotCNV/R/RunCNV.R')
+source('~/OneDrive/Software/MyGits/PlotCNV/R/RunCNV.R')
+documents()
+document()
+document()
+document()
+source('~/OneDrive/Software/MyGits/PlotCNV/R/RunCNV.R')
+library(devtools)
+load_all()
+x<- generateTestData()
+RunCNV(x)
+library(GenomicRanges)
+getChromInfoFromUCSC
+getChromInfoFromUCSC()
+load_all()
+source('~/OneDrive/Software/MyGits/PlotCNV/R/setPositionsCNV.R')
+y <-getChromInfoFromUCSC("hg19")
+source('~/OneDrive/Software/MyGits/PlotCNV/R/setPositionsCNV.R')
+source('~/OneDrive/Software/MyGits/PlotCNV/R/setPositionsCNV.R')
+FinalChrom="chrX"
+Chr_Sizes %>% grepl(paste(FinalChrom,"$", sep=""), .) %>% which() %>% Chr_Sizes[1:.]
+## These are for hg19
+## Add hg38 as well as a way to automate downloading
+Chr_Sizes <- getChromInfoFromUCSC("hg19")
+Chr_Sizes %>% grepl(paste(FinalChrom,"$", sep=""), .) %>% which() %>% Chr_Sizes[1:.]
+Chr_Sizes %>% grepl(paste(FinalChrom,"$", sep=""), .)
+Chr_Sizes$chrom %>% grepl(paste(FinalChrom,"$", sep=""), .) %>% which() %>% Chr_Sizes[1:.]
+Chr_Sizes$chrom %>% grepl(paste(FinalChrom,"$", sep=""), .) %>%
+which()
+Chr_Sizes$chrom %>% grepl(paste(FinalChrom,"$", sep=""), .) %>% which() %>% Chr_Sizes[1:.,]
+Chr_Sizes$chrom %>% grepl(paste(FinalChrom,"$", sep=""), .) %>% which() %>% Chr_Sizes[1:23,]
+Chr_Sizes
+Chr_Sizes[1:23,]
+Chr_Sizes$chrom %>% grepl(paste(FinalChrom,"$", sep=""), .) %>% which()
+Chr_Sizes$chrom %>% grepl(paste(FinalChrom,"$", sep=""), .) %>% which() %>% Chr_Sizes[1:.,]
+CutOff <- Chr_Sizes$chrom %>% grepl(paste(FinalChrom,"$", sep=""), .) %>% which()
+Chr_Sizes <- Chr_Sizes[1:CutOff,]
+Chr_Sizes
+Chr_Sizes <- Chr_Sizes[1:CutOff,]
+Chr_Starts <- lapply(1:length(Chr_Sizes), function(x) {
+sum(Chr_Sizes[1:x])
+}) %>% unlist() %>% c(0,.) %>% setNames(c(names(Chr_Sizes),"end"))
+## Set start of the regions
+ReturnClass@Segments$start <- ReturnClass@Segments$start.pos
+Chr_Starts <- lapply(1:length(Chr_Sizes), function(x) {
+sum(Chr_Sizes[1:x])
+}) %>% unlist() %>% c(0,.) %>% setNames(c(names(Chr_Sizes),"end"))
+Chr_Sizes <- Chr_Sizes[1:CutOff,]
+Chr_Sizes
+library(tidyverse)
+list(Chr_Sizes$length, names(Chr_Sizes$chrom)
+Chr_Starts <- lapply(1:length(Chr_Sizes), function(x) {
+sum(Chr_Sizes[1:x])
+}) %>% unlist() %>% c(0,.) %>% setNames(c(names(Chr_Sizes),"end"))
+## Set start of the regions
+ReturnClass@Segments$start <- ReturnClass@Segments$start.pos
+ReturnClass@Segments$end <- ReturnClass@Segments$end.pos
+## Setup x coords by adding the cumulative chromosome length to each start and end position.
+## If not using the chr prefix add it to look over the chromosomes
+## TODO make this better
+ifelse (! grep("chr", ReturnClass@Segments$chr[1]), {
+print("not using chr")
+ReturnClass@Segments$start <- Chr_Starts[paste("chr",ReturnClass@Segments$chr,sep="")] + ReturnClass@Segments$start
+ReturnClass@Segments$end <- Chr_Starts[paste("chr",ReturnClass@Segments$chr,sep="")] + ReturnClass@Segments$end
+},{
+ReturnClass@Segments$start <- Chr_Starts[ReturnClass@Segments$chr] + ReturnClass@Segments$start
+ReturnClass@Segments$end <- Chr_Starts[ReturnClass@Segments$chr] + ReturnClass@Segments$end
+})
+## Set sample heights
+ReturnClass@Segments$Ystart <- ReturnClass@SampleInfo[ReturnClass@Segments$sampleID,]$Ystart
+ReturnClass@Segments$Yend <- ReturnClass@SampleInfo[ReturnClass@Segments$sampleID,]$Yend
+## Store Genome Coords
+ReturnClass@Chr_Starts <- Chr_Starts
+ReturnClass@Chr_Sizes <- Chr_Sizes
+ReturnClass
+}
+list(Chr_Sizes$length, names(Chr_Sizes$chrom))
+c(Chr_Sizes$length, names(Chr_Sizes$chrom))
+list(Chr_Sizes$length, names(Chr_Sizes$chrom))
+vector(Chr_Sizes$length, names(Chr_Sizes$chrom))
+c(Chr_Sizes$length) %>% setNames(Chr_Sizes$chrom)
+Chr_Sizes <- c(Chr_Sizes$length) %>% setNames(Chr_Sizes$chrom)
+Chr_Starts <- lapply(1:length(Chr_Sizes), function(x) {
+sum(Chr_Sizes[1:x])
+}) %>% unlist() %>% c(0,.) %>% setNames(c(names(Chr_Sizes),"end"))
+RunCNV(x)
+RunCNV(x, genome="hg38")
+RunCNV(x, genome="mm10")
+source('~/OneDrive/Software/MyGits/PlotCNV/R/setPositionsCNV.R')
+RunCNV(x, genome="mm10")
+RunCNV(x)
+source('~/OneDrive/Software/MyGits/PlotCNV/R/setPositionsCNV.R')
+RunCNV(x)
+y <- RunCNV(x)
+load_all()
+RunCNV(x)
+y <- RunCNV(x)
+y <- RunCNV(x, genome="mm10")
+source('~/OneDrive/Software/MyGits/PlotCNV/R/setPositionsCNV.R')
+load_all()
+y <- RunCNV(x, genome="mm10")
+getChromInfoFromUCSC("mm10") %>% head()
+source('~/OneDrive/Software/MyGits/PlotCNV/R/setPositionsCNV.R')
+load_all()
+y <- RunCNV(x, genome="mm10")
+source('~/OneDrive/Software/MyGits/PlotCNV/R/setPositionsCNV.R')
+source('~/OneDrive/Software/MyGits/PlotCNV/R/setPositionsCNV.R')
+source('~/OneDrive/Software/MyGits/PlotCNV/R/getGenomeLengths.R')
+source('~/OneDrive/Software/MyGits/PlotCNV/R/getGenomeLengths.R')
+load_all()
+source('~/OneDrive/Software/MyGits/PlotCNV/R/RunCNV.R')
+source('~/OneDrive/Software/MyGits/PlotCNV/R/RunCNV.R')
+getGenomeLengths()
+getGenomeLengths(genome="mm10")
+getGenomeLengths(genome="mm10", FinalChrom="chrM")
+x <- generateTestData()
+RunCNV(x)
+x <- generateTestData(genome="mm10")
+load_all()
+x <- generateTestData()
+RunCNV(x)
+x <- generateTestData(genome="mm10")
+load_all()
+x <- generateTestData(genome="mm10")
+sample(Chr_Sizes)
+sample(Chr_Sizes,1)
+load_all()
+x <- generateTestData(genome="mm10")
+RunCNV(x, genome="mm10")
+x
+x$chrom
+x$chr
+source('~/OneDrive/Software/MyGits/PlotCNV/R/getGenomeLengths.R')
+document()

@@ -28,9 +28,9 @@
 #' CNV <- plotCopynumber(ReturnClass)
 #'
 
-RunCNV <- function(Copynumber, genome="hg19", chr="chr",sampleID="sampleID",start.pos="start.pos",end.pos="end.pos", calls="calls", FinalChrom="chrX", setColours = c()) {
+RunCNV <- function(Copynumber, genome="hg19", chr="chr",sampleID="sampleID",start.pos="start.pos",end.pos="end.pos", calls="calls", FinalChrom="chrX", setColours = c(), ...) {
         ReturnClass <- prepareCNV(Copynumber, chr=chr, sampleID=sampleID, start.pos=start.pos, end.pos=end.pos, calls=calls)
-        ReturnClass <- orderCNV(ReturnClass)
+        ReturnClass <- orderCNV(ReturnClass, ...)
         ReturnClass <- setPositionsCNV(ReturnClass, genome=genome, FinalChrom = FinalChrom)
         ReturnClass <- plotCopynumber(ReturnClass, setColours = setColours)
         ReturnClass

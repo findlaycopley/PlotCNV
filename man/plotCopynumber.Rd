@@ -4,7 +4,7 @@
 \alias{plotCopynumber}
 \title{plotCopynumber}
 \usage{
-plotCopynumber(ReturnClass, genome = "hg19")
+plotCopynumber(ReturnClass, genome = "hg19", setColours = c())
 }
 \arguments{
 \item{ReturnClass}{Class of type CNV. REQUIRED}

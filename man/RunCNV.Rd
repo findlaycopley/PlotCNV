@@ -12,7 +12,9 @@ RunCNV(
   start.pos = "start.pos",
   end.pos = "end.pos",
   calls = "calls",
-  FinalChrom = "chrX"
+  FinalChrom = "chrX",
+  setColours = c(),
+  ...
 )
 }
 \arguments{

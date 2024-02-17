@@ -6,6 +6,7 @@
 #' @param ReturnClass Class of type CNVvault created using prepareCNV. REQUIRED
 #' @param descending sets the direction of the ordering. Default: TRUE
 #' @param order Should the samples be ordered or not
+#' @param sampleOrder (optional) vector of sample names. Order samples should be plotted
 #' @keywords Copynumber CNV
 #' @export
 #' @examples

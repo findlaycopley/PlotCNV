@@ -4,7 +4,7 @@
 \alias{setPositionsCNV}
 \title{setPositionsCNV}
 \usage{
-setPositionsCNV(ReturnClass, genome = "hg19", FinalChrom = "chrX")
+setPositionsCNV(ReturnClass, genome = "hg19", FinalChrom = "chrX", ...)
 }
 \arguments{
 \item{genome}{string. The geneome to download from UCSC. Default: hg19}

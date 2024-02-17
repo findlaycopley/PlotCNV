@@ -11,7 +11,7 @@
 #' generateTestData()
 #'
 
-generateTestData <- function(genome="hg19", FinalChrom="chrX"){
+generateTestData <- function(genome="hg19", FinalChrom="chrX", ...){
         set.seed(19011990)
         ## These are my basic chr sizes for hg19
         Chr_Sizes <- getGenomeLengths(genome=genome, FinalChrom=FinalChrom)

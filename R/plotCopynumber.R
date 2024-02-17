@@ -4,12 +4,13 @@
 #' It will output a full plot of all the segments
 #' @title plotCopynumber
 #' @param ReturnClass Class of type CNV. REQUIRED
+#' @param setColours A vector of colours for the plot
 #' @keywords Copynumber CNV
 #' @export
 #' @examples
 #' Plot_Copynumber(CNVvault_Object)
 
-plotCopynumber <- function(ReturnClass, genome="hg19", setColours = c()) {
+plotCopynumber <- function(ReturnClass, setColours = c(), ...) {
 
         ReturnClass@Plot$plot <- ggplot(ReturnClass@Segments, aes(xmin=start, xmax=end, ymin=Ystart, ymax=Yend, fill=calls)) +
                 geom_rect() +
@@ -33,8 +34,8 @@ plotCopynumber <- function(ReturnClass, genome="hg19", setColours = c()) {
                                    breaks = 0.5:(ReturnClass@NumberOfSamples-0.5), labels=levels(ReturnClass@Segments$sampleID)) +
                 ## set the colours for the calls and remove the name
                 {if(length(setColours)>0)
-                scale_fill_manual(name="",
-                                  values=setColours) } +
+                        scale_fill_manual(name="",
+                                          values=setColours) } +
                 ## Set axis labels
                 labs(x="Chromosome", y="Sample") +
                 theme_classic() +
@@ -44,6 +45,8 @@ plotCopynumber <- function(ReturnClass, genome="hg19", setColours = c()) {
                                                  face="bold"),
                       axis.ticks = element_blank(),
                       legend.position = "top")
-        print(ReturnClass@Plot$plot)
+        # if (plot) {
+        #         print(ReturnClass@Plot$plot)
+        #         }
         ReturnClass
 }

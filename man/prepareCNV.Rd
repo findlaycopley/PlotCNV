@@ -11,7 +11,8 @@ prepareCNV(
   chr = "chr",
   start.pos = "start.pos",
   end.pos = "end.pos",
-  calls = "calls"
+  calls = "calls",
+  ...
 )
 }
 \arguments{

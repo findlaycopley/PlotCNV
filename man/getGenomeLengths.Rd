@@ -4,7 +4,7 @@
 \alias{getGenomeLengths}
 \title{setPositionsCNV}
 \usage{
-getGenomeLengths(ReturnClass, genome = "hg19", FinalChrom = "chrX")
+getGenomeLengths(ReturnClass, genome = "hg19", FinalChrom = "chrX", ...)
 }
 \arguments{
 \item{genome}{string. The geneome to download from UCSC. Default: hg19}

@@ -16,3 +16,15 @@ CNVvault <- setClass("CNVvault", slots = c(Segments="data.frame",
                                            NumberOfSamples="numeric",
                                            Chr_Starts="numeric",
                                            Chr_Sizes="numeric"))
+
+
+setMethod("show", "CNVvault",
+          function(object) {
+                  if ("plot" %in% names(object@Plot)) {
+                          print(object@Plot$plot)
+                  } else {
+                          cat("CNVvault object\n",
+                              "Segments: ", nrow(CNV@Segments), "\n",
+                              "Samples: ", unique(CNV@Segments$sampleID))
+                  }
+          })

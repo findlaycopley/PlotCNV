@@ -11,22 +11,23 @@
 #' @examples
 #' orderCNV(CNVvault_object)
 
-orderCNV <- function(ReturnClass, order = TRUE, descending=TRUE) {
+orderCNV <- function(ReturnClass, order = TRUE, descending=TRUE, sampleOrder = NULL, ...) {
         ## Order Samples by total bp altered.
         ## Get bp size of variant
         ReturnClass@Segments$CNV_size <- ReturnClass@Segments$end.pos - ReturnClass@Segments$start.pos
         ## Sum the bp for each sample
         ReturnClass@SampleInfo <- aggregate(ReturnClass@Segments$CNV_size, by=list(ReturnClass@Segments$sampleID), sum)
+        rownames(ReturnClass@SampleInfo) <-  ReturnClass@SampleInfo$Group.1
         ## Order the CNV_Order data by this sum.
-        if (order) {
+        if (! is.null(sampleOrder) ){
+                ReturnClass@SampleInfo <- ReturnClass@SampleInfo[sampleOrder,]
+        } else if (order) {
                 ReturnClass@SampleInfo <- ReturnClass@SampleInfo[order(ReturnClass@SampleInfo$x),]
         }
         ## Set the heights for each sample on the y axis.
         ## As the samples are ordered this just numerically assigns the y axis position from 0-the number of samples
         ReturnClass@SampleInfo$Ystart <- 0:(length(ReturnClass@SampleInfo$x)-1)
         ReturnClass@SampleInfo$Yend <- 1:length(ReturnClass@SampleInfo$x)
-
-        rownames(ReturnClass@SampleInfo) <-  ReturnClass@SampleInfo$Group.1
         ## Changes the factor levels to fit with the order
         ReturnClass@Segments$sampleID <- factor(ReturnClass@Segments$sampleID,
                                                 levels=ReturnClass@SampleInfo$Group.1)

@@ -1,14 +1,12 @@
 Package: PlotCNV
 Type: Package
 Title: Plot a pretty copynumber plot
-Version: 0.1.0
+Version: 0.2.0
 Author: Findlay Bewicke-Copley [aut, cre]
 Maintainer: Findlay Bewicke-Copley <f.copley@qmul.ac.uk>
 Description: This package has been written to create a nice genome wide plot of copynumber segments.
-    Currently it's only able to run on hg19 because I'm lazy and have just manually specified these coords. 
-    But it should run on any genome once I adjust the setPositionsCNV function to actually get coords from other genomes.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.3.1
 Depends: ggplot2, magrittr, GenomicFeatures

@@ -11,7 +11,7 @@
 #' @examples
 #' setPositionsCNV(CNVvault_class)
 
-setPositionsCNV <- function(ReturnClass, genome="hg19", FinalChrom="chrX") {
+setPositionsCNV <- function(ReturnClass, genome="hg19", FinalChrom="chrX", ...) {
         ## This function will download the chromosome sizes from UCSC
         Chr_Sizes <- getGenomeLengths(genome=genome, FinalChrom=FinalChrom)
         ## This works out the chromosome starts to correctly position them on the x axis.
@@ -25,10 +25,11 @@ setPositionsCNV <- function(ReturnClass, genome="hg19", FinalChrom="chrX") {
         ## If not using the chr prefix add it to look over the chromosomes
         ## TODO make this better
         ifelse (! grepl("chr", ReturnClass@Segments$chr[1]), {
-                print("not using chr")
+                # print("not using chr")
                 ReturnClass@Segments$start <- Chr_Starts[paste("chr",ReturnClass@Segments$chr,sep="")] + ReturnClass@Segments$start
                 ReturnClass@Segments$end <- Chr_Starts[paste("chr",ReturnClass@Segments$chr,sep="")] + ReturnClass@Segments$end
-        },{print("using chr")
+        },{
+                # print("using chr")
                 ReturnClass@Segments$start <- Chr_Starts[ReturnClass@Segments$chr %>% as.character()] + ReturnClass@Segments$start
                 ReturnClass@Segments$end <- Chr_Starts[ReturnClass@Segments$chr %>% as.character()] + ReturnClass@Segments$end
                 })

@@ -4,12 +4,16 @@
 \alias{orderCNV}
 \title{orderCNV}
 \usage{
-orderCNV(ReturnClass, descending = TRUE)
+orderCNV(ReturnClass, order = TRUE, descending = TRUE, sampleOrder = NULL, ...)
 }
 \arguments{
 \item{ReturnClass}{Class of type CNVvault created using prepareCNV. REQUIRED}
 
+\item{order}{Should the samples be ordered or not}
+
 \item{descending}{sets the direction of the ordering. Default: TRUE}
+
+\item{sampleOrder}{(optional) vector of sample names. Order samples should be plotted}
 }
 \description{
 Process data for copynumber plot

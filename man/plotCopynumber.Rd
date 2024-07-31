@@ -4,10 +4,12 @@
 \alias{plotCopynumber}
 \title{plotCopynumber}
 \usage{
-plotCopynumber(ReturnClass, genome = "hg19")
+plotCopynumber(ReturnClass, setColours = c(), ...)
 }
 \arguments{
 \item{ReturnClass}{Class of type CNV. REQUIRED}
+
+\item{setColours}{A vector of colours for the plot}
 }
 \description{
 Print Genome wide copynumber plot

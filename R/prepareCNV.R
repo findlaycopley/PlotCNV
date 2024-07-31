@@ -17,24 +17,34 @@
 #' prepareCNV()
 #'
 #'
-prepareCNV <- function(Copynumber, sampleID="sampleID", genome="hg19", chr="chr",start.pos="start.pos",end.pos="end.pos", calls="calls") {
-        Copynumber <- Copynumber[! duplicated(Copynumber),]
-        ## Create the instance with all the data from Copynumber
-        ReturnClass <- CNVvault(Segments = Copynumber)
-        ## Make sure the chromosome info is stored in a column called chr
-        ReturnClass@Segments["chr"] <- Copynumber[chr]
-        ## Make sure the call type info is stored in a column called calls
-        ReturnClass@Segments["calls"] <- Copynumber[calls]
-        ## Make sure the call type info is stored in a column called calls
-        ReturnClass@Segments["sampleID"] <- Copynumber[sampleID]
-        ## Make sure the start position info is stored in a column called start.pos
-        ReturnClass@Segments["start.pos"] <- Copynumber[start.pos]
-        ## Make sure the start position info is numeric
-        ReturnClass@Segments["start.pos"] <- ReturnClass@Segments$start.pos %>% unlist() %>% as.character() %>% as.numeric()
-        ## Make sure the end position info is stored in a column called end.pos
-        ReturnClass@Segments["end.pos"] <- Copynumber[end.pos]
-        ## Make sure the end position info is numeric
-        ReturnClass@Segments["end.pos"] <- ReturnClass@Segments$end.pos %>% unlist() %>% as.character() %>% as.numeric()
-        ## Return the class
-        ReturnClass
-}
+prepareCNV <-
+        function(Copynumber,
+                 sampleID = "sampleID",
+                 genome = "hg19",
+                 chr = "chr",
+                 start.pos = "start.pos",
+                 end.pos = "end.pos",
+                 calls = "calls",
+                 ...) {
+                Copynumber <- Copynumber[!duplicated(Copynumber), ]
+                ## Create the instance with all the data from Copynumber
+                ReturnClass <- CNVvault(Segments = Copynumber)
+                ## Make sure the chromosome info is stored in a column called chr
+                ReturnClass@Segments["chr"] <- Copynumber[chr]
+                ## Make sure the call type info is stored in a column called calls
+                ReturnClass@Segments["calls"] <- Copynumber[calls]
+                ## Make sure the call type info is stored in a column called calls
+                ReturnClass@Segments["sampleID"] <- Copynumber[sampleID]
+                ## Make sure the start position info is stored in a column called start.pos
+                ReturnClass@Segments["start.pos"] <- Copynumber[start.pos]
+                ## Make sure the start position info is numeric
+                ReturnClass@Segments["start.pos"] <-
+                        ReturnClass@Segments$start.pos %>% unlist() %>% as.character() %>% as.numeric()
+                ## Make sure the end position info is stored in a column called end.pos
+                ReturnClass@Segments["end.pos"] <- Copynumber[end.pos]
+                ## Make sure the end position info is numeric
+                ReturnClass@Segments["end.pos"] <-
+                        ReturnClass@Segments$end.pos %>% unlist() %>% as.character() %>% as.numeric()
+                ## Return the class
+                ReturnClass
+        }

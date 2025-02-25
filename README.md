@@ -147,3 +147,16 @@ ggsave("mm10_Test_plot.png", width=10, height=3)
 
 This leads to a graph like this:
 ![example mouse of plot](https://github.com/findlaycopley/PlotCNV/blob/master/mm10_Test_plot.png)
+
+
+# Testing Features
+
+Currently the dev branch also implements a minimum_width option, that will extend CNVs that are smaller than this value. The default is 0, so it won't do anything.
+
+```R
+CNV <- generateTestData(genome="mm10")
+RunCNV(CNV, genome="mm10", FinalChrom="Y", minimum_width = 10^7)
+ggsave("mm10_Test_plot.png", width=10, height=3)
+```
+
+This simply extends the end position of your shorter CNVs so use with care!

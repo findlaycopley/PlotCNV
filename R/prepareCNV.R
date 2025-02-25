@@ -50,7 +50,7 @@ prepareCNV <-
                         ReturnClass@Segments$end.pos %>% unlist() %>% as.character() %>% as.numeric()
                 ## check width is larger than minimum_width
                 ReturnClass@Segments <-
-                        mutate(ReturnClass@Segments, end.pos = ifelse(end.pos - start.pos <= minimum_width,
+                        dplyr::mutate(ReturnClass@Segments, end.pos = ifelse(end.pos - start.pos <= minimum_width,
                                                                       start.pos + minimum_width,
                                                                       end.pos))
                 ## Return the class

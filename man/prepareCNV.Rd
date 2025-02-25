@@ -12,6 +12,7 @@ prepareCNV(
   start.pos = "start.pos",
   end.pos = "end.pos",
   calls = "calls",
+  minimum_width = 0,
   ...
 )
 }
@@ -29,6 +30,8 @@ prepareCNV(
 \item{end.pos}{string: name of the column for the end positions of the segments. Default: "end.pos"}
 
 \item{calls}{string: name of the column for the SV type of the segments. Default: "calls"}
+
+\item{minimum_width}{numeric: minimum width for segments, segments shorter than this will be extended to this length. Default: 0 (off)}
 
 \item{FinalChrom}{string. The final chromosome to include in the plot. Default: chrX}
 }

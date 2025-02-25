@@ -11,7 +11,9 @@
 #' @param start.pos string: name of the column for the start positions of the segments. Default: "start.pos"
 #' @param end.pos string: name of the column for the end positions of the segments. Default: "end.pos"
 #' @param calls string: name of the column for the SV type of the segments. Default: "calls"
+#' @param minimum_width numeric: minimum width for segments, segments shorter than this will be extended to this length. Default: 0 (off)
 #' @keywords Copynumber CNV
+#' @importFrom dplyr mutate
 #' @export
 #' @examples
 #' prepareCNV()
@@ -25,6 +27,7 @@ prepareCNV <-
                  start.pos = "start.pos",
                  end.pos = "end.pos",
                  calls = "calls",
+                 minimum_width = 0,
                  ...) {
                 Copynumber <- Copynumber[!duplicated(Copynumber), ]
                 ## Create the instance with all the data from Copynumber
@@ -45,6 +48,11 @@ prepareCNV <-
                 ## Make sure the end position info is numeric
                 ReturnClass@Segments["end.pos"] <-
                         ReturnClass@Segments$end.pos %>% unlist() %>% as.character() %>% as.numeric()
+                ## check width is larger than minimum_width
+                ReturnClass@Segments <-
+                        mutate(ReturnClass@Segments, end.pos = ifelse(end.pos - start.pos <= minimum_width,
+                                                                      start.pos + minimum_width,
+                                                                      end.pos))
                 ## Return the class
                 ReturnClass
         }
